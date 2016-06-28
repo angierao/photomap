@@ -38,7 +38,6 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         let locationCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         let annotation = MKPointAnnotation()
         annotation.coordinate = locationCoordinate
-        //annotation.title = "Picture!"
         annotation.title = "\(locationCoordinate.latitude)"
         mapView.addAnnotation(annotation)
     }
@@ -49,6 +48,8 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID)
         if (annotationView == nil) {
             /*
+            // for the pin
+             
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
             annotationView!.canShowCallout = true
             annotationView!.leftCalloutAccessoryView = UIImageView(frame: CGRect(x:0, y:0, width: 50, height:50))
@@ -112,7 +113,7 @@ class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate,
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         let photoannotation = PhotoAnnotation()
-        photoannotation.photo = editedImage
+        //photoannotation.photo = editedImage
         selectedImage = editedImage
         
         // Do something with the images (based on your use case)
